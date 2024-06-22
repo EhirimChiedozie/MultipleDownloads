@@ -9,6 +9,6 @@ a_tags = topics.find_all('a')
 links = [link['href'] for link in a_tags]
 for topic in links:
     content = requests.get('https://www.w3schools.com/css/'+topic,headers=headers)
-    html_file = open(f'{topic[:-4]}.html','w')
+    html_file = open(f'CssTopics/{topic[:-4]}.html','w')
     html_file.write(content.text)
     html_file.close()
